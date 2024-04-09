@@ -1,0 +1,51 @@
+{
+	"MasterDiscoveryNode":[{
+	  "NodeId": 1,
+	  "ListenAddr":"127.0.0.1:8803"
+	}
+	],
+	
+	
+    "NodeList":[
+      {
+        "NodeId": 1,
+        "ListenAddr":"127.0.0.1:8801",
+        "MaxRpcParamLen": 409600,
+        "CompressBytesLen": 20480,
+        "NodeName": "Node_Test1",
+        "Private": true,
+        "remark":"//以_打头的，表示只在本机进程，不对整个子网开发",
+        "ServiceList": ["WSService","WsGateService","TestService1","TestService2","TestService3","TestService4","TestService5","TestService6","TestService7","TestService8","TestService9","TestService10","HttpService","TestHttpService","TestTcpService","MyTcpService","TestService13"]
+      },
+      {
+        "NodeId": 2,
+        "ListenAddr":"127.0.0.1:8802",
+        "MaxRpcParamLen": 409600,
+        "CompressBytesLen": 20480,
+        "NodeName": "Node_Test2",
+        "Private": false,
+        "remark":"//以_打头的，表示只在本机进程，不对整个子网开发",
+        "ServiceList": ["TestService8"]
+      },
+      {
+        "NodeId": 3,
+        "ListenAddr":"127.0.0.1:8803",
+        "MaxRpcParamLen": 409600,
+        "CompressBytesLen": 20480,
+        "NodeName": "Node_Test3",
+        "Private": false,
+        "remark":"//以_打头的，表示只在本机进程，不对整个子网开发",
+        "ServiceList": ["TestService9", "TestService10"]
+      },
+      {
+        "NodeId": 4,
+        "ListenAddr":"127.0.0.1:8804",
+        "MaxRpcParamLen": 409600,
+        "CompressBytesLen": 20480,
+        "NodeName": "Node_Test4",
+        "Private": true,
+        "remark":"//以_打头的，表示只在本机进程，不对整个子网开发",
+        "ServiceList": ["TestService11", "TestService12"]
+      }
+    ]
+}
