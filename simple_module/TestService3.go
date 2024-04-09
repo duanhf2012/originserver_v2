@@ -2,8 +2,8 @@ package simple_module
 
 import (
 	"fmt"
-	"github.com/duanhf2012/origin/node"
-	"github.com/duanhf2012/origin/service"
+	"github.com/duanhf2012/origin/v2/node"
+	"github.com/duanhf2012/origin/v2/service"
 )
 
 func init() {

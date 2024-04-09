@@ -3,9 +3,9 @@ package simple_rpc
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/duanhf2012/origin/node"
-	"github.com/duanhf2012/origin/rpc"
-	"github.com/duanhf2012/origin/service"
+	"github.com/duanhf2012/origin/v2/node"
+	"github.com/duanhf2012/origin/v2/rpc"
+	"github.com/duanhf2012/origin/v2/service"
 	"time"
 )
 

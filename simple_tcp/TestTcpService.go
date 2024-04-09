@@ -2,12 +2,12 @@ package simple_tcp
 
 import (
 	"fmt"
-	"github.com/duanhf2012/origin/network"
-	"github.com/duanhf2012/origin/network/processor"
-	"github.com/duanhf2012/origin/node"
-	"github.com/duanhf2012/origin/service"
-	"github.com/duanhf2012/origin/sysservice/tcpservice"
-	"github.com/duanhf2012/origin/util/timer"
+	"github.com/duanhf2012/origin/v2/network"
+	"github.com/duanhf2012/origin/v2/network/processor"
+	"github.com/duanhf2012/origin/v2/node"
+	"github.com/duanhf2012/origin/v2/service"
+	"github.com/duanhf2012/origin/v2/sysservice/tcpservice"
+	"github.com/duanhf2012/origin/v2/util/timer"
 	"google.golang.org/protobuf/proto"
 	msgpb "originserver/common/proto/msg"
 	"time"

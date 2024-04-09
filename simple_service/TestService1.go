@@ -2,10 +2,10 @@ package simple_service
 
 import (
 	"fmt"
-	"github.com/duanhf2012/origin/node"
-	"github.com/duanhf2012/origin/rpc"
-	"github.com/duanhf2012/origin/service"
-	"github.com/duanhf2012/origin/util/timer"
+	"github.com/duanhf2012/origin/v2/node"
+	"github.com/duanhf2012/origin/v2/rpc"
+	"github.com/duanhf2012/origin/v2/service"
+	"github.com/duanhf2012/origin/v2/util/timer"
 	"time"
 )
 

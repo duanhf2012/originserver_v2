@@ -1,11 +1,11 @@
 package simple_ws
 
 import (
-	"github.com/duanhf2012/origin/log"
-	"github.com/duanhf2012/origin/network/processor"
-	"github.com/duanhf2012/origin/node"
-	"github.com/duanhf2012/origin/service"
-	"github.com/duanhf2012/origin/sysservice/wsservice"
+	"github.com/duanhf2012/origin/v2/log"
+	"github.com/duanhf2012/origin/v2/network/processor"
+	"github.com/duanhf2012/origin/v2/node"
+	"github.com/duanhf2012/origin/v2/service"
+	"github.com/duanhf2012/origin/v2/sysservice/wsservice"
 )
 
 type WsGateService struct {

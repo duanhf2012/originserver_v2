@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/duanhf2012/origin/node"
+	"github.com/duanhf2012/origin/v2/node"
 	"time"
 
 	_ "originserver/simple_asyncdo"

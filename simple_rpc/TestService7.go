@@ -3,10 +3,10 @@ package simple_rpc
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/duanhf2012/origin/node"
-	"github.com/duanhf2012/origin/rpc"
-	"github.com/duanhf2012/origin/service"
-	"github.com/duanhf2012/origin/util/timer"
+	"github.com/duanhf2012/origin/v2/node"
+	"github.com/duanhf2012/origin/v2/rpc"
+	"github.com/duanhf2012/origin/v2/service"
+	"github.com/duanhf2012/origin/v2/util/timer"
 	"time"
 )
 
@@ -118,7 +118,7 @@ func (slf *TestService7) RawTest(t *timer.Timer) {
 	retData.A = 101
 
 	rawData, _ := json.Marshal(&retData)
-	slf.RawGoNode(rpc.RpcProcessorGoGoPB, 1, 1, "TestService6", rawData)
+	slf.RawGoNode(rpc.RpcProcessorPB, 1, 1, "TestService6", rawData)
 }
 
 func (slf *TestService7) SyncTest(t *timer.Timer) {

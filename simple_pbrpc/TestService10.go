@@ -2,9 +2,9 @@ package simple_pbrpc
 
 import (
 	"fmt"
-	"github.com/duanhf2012/origin/node"
-	rpcHandle "github.com/duanhf2012/origin/rpc"
-	"github.com/duanhf2012/origin/service"
+	"github.com/duanhf2012/origin/v2/node"
+	rpcHandle "github.com/duanhf2012/origin/v2/rpc"
+	"github.com/duanhf2012/origin/v2/service"
 	"google.golang.org/protobuf/proto"
 	"originserver/common/proto/rpc"
 )

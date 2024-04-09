@@ -2,12 +2,12 @@ package simple_pbrpc
 
 import (
 	"fmt"
-	"github.com/duanhf2012/origin/log"
-	"github.com/duanhf2012/origin/node"
-	rpcHandle "github.com/duanhf2012/origin/rpc"
-	"github.com/duanhf2012/origin/service"
-	"github.com/duanhf2012/origin/util/timer"
-	"github.com/duanhf2012/origin/util/uuid"
+	"github.com/duanhf2012/origin/v2/log"
+	"github.com/duanhf2012/origin/v2/node"
+	rpcHandle "github.com/duanhf2012/origin/v2/rpc"
+	"github.com/duanhf2012/origin/v2/service"
+	"github.com/duanhf2012/origin/v2/util/timer"
+	"github.com/duanhf2012/origin/v2/util/uuid"
 	"google.golang.org/protobuf/proto"
 	"math/rand"
 	"originserver/common/proto/rpc"
@@ -78,7 +78,7 @@ func (slf *TestService8) TestRpcRegister(t *timer.Timer) {
 	arg := rpc.TestOne{Msg: "test Rpc Register"}
 	sendByte, _ := proto.Marshal(&arg)
 
-	slf.RawGoNode(rpcHandle.RpcProcessorGoGoPB, 3, 1, "TestService10", sendByte)
+	slf.RawGoNode(rpcHandle.RpcProcessorPB, 3, 1, "TestService10", sendByte)
 
 	slf.AfterFunc(5*time.Second, slf.TestRpcRegister)
 }
