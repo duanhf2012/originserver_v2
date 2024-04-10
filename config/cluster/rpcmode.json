@@ -1,0 +1,11 @@
+{
+	"RpcMode":{
+      "Mode": "Nats",
+      "Mode_": "Origin",
+      "Nats":[
+        {
+          "NatsAddr": "127.0.0.1:4222"
+        }
+      ]
+    }
+}

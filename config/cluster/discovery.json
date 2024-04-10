@@ -1,0 +1,23 @@
+{
+  "Discovery": {
+    "DiscoveryMode": "Nats",
+    "DiscoveryMode_": "OriginNet",
+    "Nats": [
+      {
+        "NatsAddr": "127.0.0.1:4222",
+        "NatsUser": "nats",
+        "NatsPass": "nats"
+      }
+    ],
+    "OriginNet_": [
+      {
+        "DefaultMasterDiscoveryNode": [
+          {
+            "NodeId": "1",
+            "ListenAddr": "127.0.0.1:8803"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -78,7 +78,7 @@ func (slf *TestService8) TestRpcRegister(t *timer.Timer) {
 	arg := rpc.TestOne{Msg: "test Rpc Register"}
 	sendByte, _ := proto.Marshal(&arg)
 
-	slf.RawGoNode(rpcHandle.RpcProcessorPB, 3, 1, "TestService10", sendByte)
+	slf.RawGoNode(rpcHandle.RpcProcessorPB, "3", 1, "TestService10", sendByte)
 
 	slf.AfterFunc(5*time.Second, slf.TestRpcRegister)
 }

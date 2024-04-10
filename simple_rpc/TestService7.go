@@ -118,7 +118,7 @@ func (slf *TestService7) RawTest(t *timer.Timer) {
 	retData.A = 101
 
 	rawData, _ := json.Marshal(&retData)
-	slf.RawGoNode(rpc.RpcProcessorPB, 1, 1, "TestService6", rawData)
+	slf.RawGoNode(rpc.RpcProcessorPB, "1", 1, "TestService6", rawData)
 }
 
 func (slf *TestService7) SyncTest(t *timer.Timer) {

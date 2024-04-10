@@ -30,12 +30,12 @@ type InputData struct {
 	B int
 }
 
-func (slf *TestService6) OnNodeConnected(nodeId int) {
-	fmt.Printf("node id %d is conntected.\n", nodeId)
+func (slf *TestService6) OnNodeConnected(nodeId string) {
+	fmt.Printf("node id %s is conntected.\n", nodeId)
 }
 
-func (slf *TestService6) OnNodeDisconnect(nodeId int) {
-	fmt.Printf("node id %d is disconntected.\n", nodeId)
+func (slf *TestService6) OnNodeDisconnect(nodeId string) {
+	fmt.Printf("node id %s is disconntected.\n", nodeId)
 }
 
 func (slf *TestService6) RPC_Sum(input *InputData, output *int) error {

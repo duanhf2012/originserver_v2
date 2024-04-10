@@ -1,6 +1,6 @@
 {
 	"MasterDiscoveryNode":[{
-	  "NodeId": "test_1",
+	  "NodeId": "1",
 	  "ListenAddr":"127.0.0.1:8803"
 	}
 	],
@@ -9,7 +9,7 @@
 
     "NodeList":[
       {
-        "NodeId": "test_1",
+        "NodeId": "1",
         "ListenAddr":"127.0.0.1:8801",
         "MaxRpcParamLen": 409600,
         "CompressBytesLen": 20480,
