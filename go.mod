@@ -48,4 +48,4 @@ require (
 	golang.org/x/sys v0.16.0 // indirect
 )
 
-replace github.com/duanhf2012/origin/v2 v2.0.0 => ../origin
+//replace github.com/duanhf2012/origin/v2 v2.0.0 => ../origin
