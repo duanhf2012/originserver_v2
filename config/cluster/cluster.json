@@ -1,12 +1,4 @@
 {
-	"MasterDiscoveryNode":[{
-	  "NodeId": "test_1",
-	  "ListenAddr":"127.0.0.1:8803"
-	}
-	],
-	
-
-
     "NodeList":[
       {
         "NodeId": "test_1",

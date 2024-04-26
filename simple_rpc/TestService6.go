@@ -3,6 +3,7 @@ package simple_rpc
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/duanhf2012/origin/v2/log"
 	"github.com/duanhf2012/origin/v2/node"
 	"github.com/duanhf2012/origin/v2/rpc"
 	"github.com/duanhf2012/origin/v2/service"
@@ -18,24 +19,14 @@ type TestService6 struct {
 }
 
 func (slf *TestService6) OnInit() error {
+	slf.RegDiscoverListener(slf)
 	slf.RegRawRpc(1, slf.RawRpcCallBack)
-
-	//监听其他Node结点连接和断开事件
-	slf.RegRpcListener(slf)
 	return nil
 }
 
 type InputData struct {
 	A int
 	B int
-}
-
-func (slf *TestService6) OnNodeConnected(nodeId string) {
-	fmt.Printf("node id %s is conntected.\n", nodeId)
-}
-
-func (slf *TestService6) OnNodeDisconnect(nodeId string) {
-	fmt.Printf("node id %s is disconntected.\n", nodeId)
 }
 
 func (slf *TestService6) RPC_Sum(input *InputData, output *int) error {
@@ -59,4 +50,12 @@ func (slf *TestService6) RawRpcCallBack(data []byte) {
 	retData := InputData{}
 	err := json.Unmarshal(data, &retData)
 	fmt.Println(err, retData)
+}
+
+func (slf *TestService6) OnDiscoveryService(nodeId string, serviceName []string) {
+	log.Debug(">>>> OnDiscoveryService", log.String("nodeId", nodeId), log.Any("serviceName", serviceName))
+}
+
+func (slf *TestService6) OnUnDiscoveryService(nodeId string, serviceName []string) {
+	log.Debug(">>>> OnUnDiscoveryService", log.String("nodeId", nodeId), log.Any("serviceName", serviceName))
 }

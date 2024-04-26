@@ -3,6 +3,7 @@ package simple_rpc
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/duanhf2012/origin/v2/log"
 	"github.com/duanhf2012/origin/v2/node"
 	"github.com/duanhf2012/origin/v2/rpc"
 	"github.com/duanhf2012/origin/v2/service"
@@ -19,6 +20,7 @@ type TestService7 struct {
 }
 
 func (slf *TestService7) OnInit() error {
+	slf.RegDiscoverListener(slf)
 	slf.AfterFunc(time.Second*2, slf.CallTest)
 	slf.AfterFunc(time.Second*2, slf.AsyncCallTest)
 	slf.AfterFunc(time.Second*2, slf.GoTest)
@@ -135,4 +137,11 @@ func (slf *TestService7) SyncTest(t *timer.Timer) {
 	err := slf.Call("TestService6.RPC_SyncTest", &input, &output)
 	fmt.Println(err, output)
 
+}
+func (slf *TestService7) OnDiscoveryService(nodeId string, serviceName []string) {
+	log.Debug(">>>> OnDiscoveryService", log.String("nodeId", nodeId), log.Any("serviceName", serviceName))
+}
+
+func (slf *TestService7) OnUnDiscoveryService(nodeId string, serviceName []string) {
+	log.Debug(">>>> OnUnDiscoveryService", log.String("nodeId", nodeId), log.Any("serviceName", serviceName))
 }

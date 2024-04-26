@@ -1,23 +1,24 @@
 {
   "Discovery": {
-    "DiscoveryMode": "Nats",
-    "DiscoveryMode_": "OriginNet",
-    "Nats": [
-      {
-        "NatsAddr": "127.0.0.1:4222",
-        "NatsUser": "nats",
-        "NatsPass": "nats"
-      }
-    ],
-    "OriginNet_": [
-      {
-        "DefaultMasterDiscoveryNode": [
-          {
-            "NodeId": "1",
-            "ListenAddr": "127.0.0.1:8803"
-          }
-        ]
-      }
-    ]
+    "Etcd_": {
+      "TTLSecond": 10,
+      "DialTimeoutMillisecond": 3000,
+      "EtcdList": [
+        {
+          "NetworkName": ["network1"],
+          "Endpoints": ["http://192.168.13.24:12379"]
+        }
+      ]
+    },
+    "Origin":{
+      "TTLSecond": 10,
+      "MasterNodeList": [
+        {
+          "NodeId": "test_1",
+          "ListenAddr": "127.0.0.1:8801"
+        }
+      ]
+    }
+
   }
 }

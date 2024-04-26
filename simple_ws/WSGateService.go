@@ -49,7 +49,7 @@ type MsgStruct struct {
 	Passwd   string
 }
 
-func (slf *WsGateService) ProcessMessage(clientid uint64, msg interface{}) {
+func (slf *WsGateService) ProcessMessage(clientid string, msg interface{}) {
 	//解析客户端发过来的数据
 	msgStruct := msg.(*MsgStruct)
 
@@ -62,10 +62,10 @@ func (slf *WsGateService) ProcessMessage(clientid uint64, msg interface{}) {
 	}
 }
 
-func (slf *WsGateService) OnConnected(clientid uint64) {
+func (slf *WsGateService) OnConnected(clientid string) {
 	log.SDebug("client id ", clientid, " is connected")
 }
 
-func (slf *WsGateService) OnDisconnected(clientid uint64) {
+func (slf *WsGateService) OnDisconnected(clientid string) {
 	log.SDebug("client id ", clientid, " is disconnected\n")
 }

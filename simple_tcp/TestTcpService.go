@@ -86,7 +86,7 @@ func (slf *TestTcpService) testTcp() bool {
 		pbInfo := slf.client.pbProcessor.MakeMsg(uint16(msgpb.MsgType_MsgReq), &req)
 
 		//将对象序列化成一个buf
-		buf, _ := slf.client.pbProcessor.Marshal(0, pbInfo)
+		buf, _ := slf.client.pbProcessor.Marshal("", pbInfo)
 
 		//发送出去
 		slf.client.Write(slf.client.conn, buf)
@@ -102,7 +102,7 @@ func (slf *TestTcpService) newAgent(c *network.TCPConn) network.Agent {
 }
 
 // MsgHandle 消息处理，调用slf.pbProcessor.Register注册
-func (slf *Client) MsgHandle(clientId uint64, msg proto.Message) {
+func (slf *Client) MsgHandle(clientId string, msg proto.Message) {
 	fmt.Println(msg)
 }
 
@@ -115,29 +115,29 @@ func (slf *Client) Run() {
 		}
 
 		//让解析器去解析，如何解析可以查看Unmarshal函数的实现。客户端可以模拟类似的方式去解析
-		packInfo, err := slf.pbProcessor.Unmarshal(0, msgBuff)
+		packInfo, err := slf.pbProcessor.Unmarshal("", msgBuff)
 		if err != nil {
 			fmt.Println(err)
 			continue
 		}
 
 		//直接路由回调
-		slf.pbProcessor.MsgRoute(0, packInfo)
+		slf.pbProcessor.MsgRoute("", packInfo)
 	}
 }
 
 func (slf *Client) OnClose() {
 }
 
-func (slf *TestTcpService) OnConnected(clientid uint64) {
-	fmt.Printf("client id %d connected\n", clientid)
+func (slf *TestTcpService) OnConnected(clientid string) {
+	fmt.Printf("client id %s connected\n", clientid)
 }
 
-func (slf *TestTcpService) OnDisconnected(clientid uint64) {
-	fmt.Printf("client id %d disconnected\n", clientid)
+func (slf *TestTcpService) OnDisconnected(clientid string) {
+	fmt.Printf("client id %s disconnected\n", clientid)
 }
 
-func (slf *TestTcpService) OnRequest(clientid uint64, msg proto.Message) {
+func (slf *TestTcpService) OnRequest(clientid string, msg proto.Message) {
 	//解析客户端发过来的数据
 	msgReq := msg.(*msgpb.Req)
 	fmt.Println(msgReq)
@@ -149,7 +149,7 @@ func (slf *TestTcpService) OnRequest(clientid uint64, msg proto.Message) {
 	slf.SendMsg(clientid, msgpb.MsgType_MsgRes, &res)
 }
 
-func (slf *TestTcpService) SendMsg(clientid uint64, msgtype msgpb.MsgType, msg proto.Message) error {
+func (slf *TestTcpService) SendMsg(clientid string, msgtype msgpb.MsgType, msg proto.Message) error {
 	//生成PBPackInfo结构
 	msgData := slf.processor.MakeMsg(uint16(msgtype), msg)
 
