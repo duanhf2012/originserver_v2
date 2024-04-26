@@ -6,7 +6,7 @@
       "EtcdList": [
         {
           "NetworkName": ["network1"],
-          "Endpoints": ["http://192.168.13.24:12379"]
+          "Endpoints": ["http://127.0.0.1:12379"]
         }
       ]
     },
