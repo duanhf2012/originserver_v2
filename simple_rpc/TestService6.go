@@ -32,7 +32,7 @@ type InputData struct {
 func (slf *TestService6) RPC_Sum(input *InputData, output *int) error {
 	*output = input.A + input.B
 	//等待1.5s
-	time.Sleep(1500 * time.Millisecond)
+	//time.Sleep(1500 * time.Millisecond)
 	return nil
 }
 
