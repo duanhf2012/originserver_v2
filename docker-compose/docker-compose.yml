@@ -36,7 +36,7 @@ services:
     image: bitnami/nats:latest
     environment:
       - "NATS_ENABLE_CLUSTER=yes"
-      - "NATS_CLUSTER_ROUTES=nats://192.168.13.24:6223,nats://192.168.13.24:6224"
+      - "NATS_CLUSTER_ROUTES=nats://nats2:6223,nats://nats3:6224"
     hostname: nats1
     ports:
       - "4222:4222"  # NATS clients
@@ -47,7 +47,7 @@ services:
     image: bitnami/nats:latest
     environment:
       - "NATS_ENABLE_CLUSTER=yes"
-      - "NATS_CLUSTER_ROUTES=nats://192.168.13.24:6222,nats://192.168.13.24:6224"
+      - "NATS_CLUSTER_ROUTES=nats://nats1:6222,nats://nats3:6224"
     hostname: nats2
     ports:
       - "4223:4222"
@@ -58,7 +58,7 @@ services:
     image: bitnami/nats:latest
     environment:
       - "NATS_ENABLE_CLUSTER=yes"
-      - "NATS_CLUSTER_ROUTES=nats://192.168.13.24:6222,nats://192.168.13.24:6223"
+      - "NATS_CLUSTER_ROUTES=nats://nats1:6222,nats://nats2:6223"
     hostname: nats3
     ports:
       - "4224:4222"
