@@ -5,7 +5,7 @@ go 1.21
 toolchain go1.21.0
 
 require (
-	github.com/duanhf2012/origin/v2 v2.0.0
+	github.com/duanhf2012/origin/v2 v2.0.1
 	google.golang.org/protobuf v1.33.0
 )
 
