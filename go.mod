@@ -5,11 +5,14 @@ go 1.21
 toolchain go1.21.0
 
 require (
-	github.com/duanhf2012/origin/v2 v2.0.5-0.20240508061839-c6d0bd9a1996
+	github.com/duanhf2012/origin/v2 v2.0.6-0.20240511064234-9cf21bf41837
 	google.golang.org/protobuf v1.33.0
 )
 
-require github.com/gin-gonic/gin v1.9.1
+require (
+	github.com/gin-gonic/gin v1.9.1
+	go.mongodb.org/mongo-driver v1.9.1
+)
 
 require (
 	github.com/bytedance/sonic v1.9.1 // indirect
@@ -41,7 +44,6 @@ require (
 	go.uber.org/multierr v1.10.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
 	golang.org/x/arch v0.3.0 // indirect
-	golang.org/x/crypto v0.18.0 // indirect
 	golang.org/x/net v0.17.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	google.golang.org/genproto v0.0.0-20230822172742-b8732ec3820d // indirect
@@ -52,7 +54,6 @@ require (
 )
 
 require (
-	//github.com/duanhf2012/origin v1.21.7 // indirect
 	github.com/go-ole/go-ole v1.2.6 // indirect
 	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
@@ -63,6 +64,7 @@ require (
 	github.com/tklauser/go-sysconf v0.3.13 // indirect
 	github.com/tklauser/numcpus v0.7.0 // indirect
 	github.com/yusufpapurcu/wmi v1.2.4 // indirect
+	golang.org/x/crypto v0.18.0 // indirect
 	golang.org/x/sys v0.16.0 // indirect
 )
 

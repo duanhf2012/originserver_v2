@@ -1,19 +1,23 @@
 package main
 
 import (
+	"fmt"
 	"github.com/duanhf2012/origin/v2/node"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	_ "originserver/simple_asyncdo"
 	_ "originserver/simple_event"
+	_ "originserver/simple_gin"
 	_ "originserver/simple_http"
 	_ "originserver/simple_module"
 	_ "originserver/simple_pbrpc"
 	_ "originserver/simple_rpc"
 	"time"
-	_ "originserver/simple_gin"
 	//导入simple_service模块
 	_ "originserver/simple_service"
 	_ "originserver/simple_tcp"
 	_ "originserver/simple_ws"
+
+	_ "originserver/simple_templateservice"
 )
 
 func main() {
