@@ -1,9 +1,7 @@
 package main
 
 import (
-	"fmt"
 	"github.com/duanhf2012/origin/v2/node"
-	"go.mongodb.org/mongo-driver/bson/primitive"
 	_ "originserver/simple_asyncdo"
 	_ "originserver/simple_event"
 	_ "originserver/simple_gin"
