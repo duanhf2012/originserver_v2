@@ -122,7 +122,9 @@ func (slf *Client) Run() {
 		}
 
 		//直接路由回调
-		slf.pbProcessor.MsgRoute("", packInfo)
+		slf.pbProcessor.MsgRoute("", packInfo, func(data []byte) {
+
+		})
 	}
 }
 
