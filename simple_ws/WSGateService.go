@@ -53,12 +53,12 @@ func (slf *WsGateService) ProcessMessage(clientid string, msg interface{}) {
 	//解析客户端发过来的数据
 	msgStruct := msg.(*MsgStruct)
 
-	log.Debug("recv:%+v", msgStruct)
+	log.Debug("recv message", log.Any("struct", msgStruct))
 
 	//发送数据给客户端
 	err := slf.wsService.SendMsg(clientid, msgStruct)
 	if err != nil {
-		log.Warning("send msg is fail %+v!", err)
+		log.Warning("send msg is fail", log.ErrorAttr("error", err))
 	}
 }
 
