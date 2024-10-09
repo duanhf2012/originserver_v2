@@ -12,8 +12,6 @@ import (
 	"time"
 	//导入simple_service模块
 	_ "originserver/simple_service"
-	_ "originserver/simple_tcp"
-	_ "originserver/simple_ws"
 
 	_ "originserver/simple_frametimer"
 	_ "originserver/simple_templateservice"

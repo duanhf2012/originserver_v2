@@ -7,7 +7,7 @@
         "CompressBytesLen": 20480,
         "Private": false,
         "remark":"//以_打头的，表示只在本机进程，不对整个子网开发",
-        "ServiceList": ["TimerModuleService","WSService","WsGateService","TestService1","TestService2","TestService3","TestService4","TestService5","TestService6","TestService7","TestService8","TestService9","TestService10","HttpService","TestHttpService","TestTcpService","MyTcpService","TestService13"]
+        "ServiceList": ["TimerModuleService","TestService1","TestService2","TestService3","TestService4","TestService5","TestService6","TestService7","TestService8","TestService9","TestService10","HttpService","TestHttpService","TestService13"]
       },
       {
         "NodeId": "test_2",
