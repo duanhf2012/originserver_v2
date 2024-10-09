@@ -49,23 +49,24 @@ type MsgStruct struct {
 	Passwd   string
 }
 
-func (slf *WsGateService) ProcessMessage(clientid string, msg interface{}) {
+func (slf *WsGateService) ProcessMessage(clientId string, msg interface{}) {
 	//解析客户端发过来的数据
 	msgStruct := msg.(*MsgStruct)
 
 	log.Debug("recv message", log.Any("struct", msgStruct))
 
 	//发送数据给客户端
-	err := slf.wsService.SendMsg(clientid, msgStruct)
+	err := slf.wsService.SendMsg(clientId, msgStruct)
 	if err != nil {
 		log.Warning("send msg is fail", log.ErrorAttr("error", err))
 	}
 }
 
-func (slf *WsGateService) OnConnected(clientid string) {
-	log.SDebug("client id ", clientid, " is connected")
+func (slf *WsGateService) OnConnected(clientId string) {
+
+	log.Debug("client is connected", log.String("clientId", clientId))
 }
 
-func (slf *WsGateService) OnDisconnected(clientid string) {
-	log.SDebug("client id ", clientid, " is disconnected\n")
+func (slf *WsGateService) OnDisconnected(clientId string) {
+	log.Debug("client is disconnected", log.String("clientId", clientId))
 }

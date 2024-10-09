@@ -64,7 +64,7 @@ func (slf *TestTcpService) OnStart() {
 
 type Client struct {
 	network.TCPClient
-	conn *network.TCPConn
+	conn *network.NetConn
 
 	pbProcessor *processor.PBProcessor
 }
@@ -89,14 +89,15 @@ func (slf *TestTcpService) testTcp() bool {
 		buf, _ := slf.client.pbProcessor.Marshal("", pbInfo)
 
 		//发送出去
-		slf.client.Write(slf.client.conn, buf)
+		slf.client.conn.WriteMsg(buf)
+		//slf.client.Write(slf.client.conn, buf)
 	})
 
 	//返回值为true，表示继续执行回调，否则不执行回调
 	return false
 }
 
-func (slf *TestTcpService) newAgent(c *network.TCPConn) network.Agent {
+func (slf *TestTcpService) newAgent(c *network.NetConn) network.Agent {
 	slf.client.conn = c
 	return &slf.client
 }

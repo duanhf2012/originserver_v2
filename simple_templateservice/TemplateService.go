@@ -11,9 +11,7 @@ import (
 )
 
 func init() {
-	node.SetupTemplate(func() service.IService {
-		return &TemplateService{}
-	})
+	node.SetupTemplate[TemplateService]()
 }
 
 type TemplateService struct {
