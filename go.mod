@@ -5,7 +5,7 @@ go 1.22.1
 toolchain go1.22.7
 
 require (
-	github.com/duanhf2012/origin/v2 v2.0.13-0.20241010011129-e9bbf5b592db
+	github.com/duanhf2012/origin/v2 v2.0.16-0.20241129054751-c9507f9ee908
 	google.golang.org/protobuf v1.34.2
 )
 
@@ -71,6 +71,7 @@ require (
 	golang.org/x/crypto v0.27.0 // indirect
 	golang.org/x/sys v0.25.0 // indirect
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
+	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 )
 
 //replace github.com/duanhf2012/origin/v2 => ../origin

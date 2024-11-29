@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/duanhf2012/origin/v2/log"
 	"github.com/duanhf2012/origin/v2/node"
 	_ "originserver/simple_asyncdo"
 	_ "originserver/simple_event"
@@ -18,6 +19,8 @@ import (
 )
 
 func main() {
+	// 将日志格式设置为Txt，默认为json
+	log.GetLogger().SetEncoder(log.GetTxtEncoder())
 
 	//打开性能分析报告功能，并设置10秒汇报一次
 	node.OpenProfilerReport(time.Second * 10)

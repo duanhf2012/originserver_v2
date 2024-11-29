@@ -104,7 +104,7 @@ func (slf *TestService9) AsyncCallServer8TestTwo(cron *timer.Cron) {
 			arg := rpc.TestTwo{Msg: uuid.Rand().HexEx(), Data: int32(rand.Int())}
 			errCall := slf.AsyncCall("TestService8.RPC_Service8TestTwo", &arg, func(ret *rpc.TestTwoRet, err error) {
 				if err != nil || ret.Msg != arg.Msg || ret.Data != arg.Data {
-					log.Error("TestService9 AsyncCallServer8TestTwo err[%+v], arg[%+v], ret[%+v]", err, arg, ret)
+					log.Errorf("TestService9 AsyncCallServer8TestTwo err[%+v], arg[%+v], ret[%+v]", err, arg, ret)
 				}
 			})
 			if errCall != nil {
@@ -134,7 +134,7 @@ func (slf *TestService9) CallServer8TestTwo(cron *timer.Cron) {
 			ret := rpc.TestTwoRet{}
 			errCall := slf.Call("TestService8.RPC_Service8TestTwo", &arg, &ret)
 			if errCall != nil || ret.Msg != arg.Msg || ret.Data != arg.Data {
-				log.Error("TestService9 CallServer8TestTwo err[%+v], arg[%+v], ret[%+v]", errCall, &arg, &ret)
+				log.Errorf("TestService9 CallServer8TestTwo err[%+v], arg[%+v], ret[%+v]", errCall, &arg, &ret)
 			}
 		}()
 	}

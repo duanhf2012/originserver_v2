@@ -47,12 +47,14 @@ func (ts *TestGinService) OnInit() error {
 	})
 
 	ts.ginModule.SafePOST("/test3", func(c *ginmodule.SafeContext) {
-		log.Debug("post", c.Request.Body)
+
 		var resp struct {
 			Code int
 			Msg  string
 		}
 
+		c.ShouldBindBodyWithJSON(&resp)
+		log.Debug("post", log.Any("body", resp))
 		resp.Code = 0
 		resp.Msg = "ok"
 
